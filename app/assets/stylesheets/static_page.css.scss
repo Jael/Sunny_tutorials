@@ -1,0 +1,29 @@
+// Place all the styles related to the StaticPage controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+body{
+  background: url('backg.jpg')
+}
+#title_img{
+  margin-left: 200px; 
+  width:900px;
+  height:450px
+}
+#title{
+  width: 560px;
+  position: absolute;
+  top: 250px;
+  left: 230px;
+}
+#title p{
+  color: rgba(55, 235, 55, 0.6);
+  font-size: 60px;
+}
+.navbar{
+  width: 900px;
+  margin-left: 200px;
+}
+.navbar .navbar-inner .nav li a:hover{
+  color: red;
+  font-size: 15px;
+}
