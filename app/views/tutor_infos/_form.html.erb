@@ -20,6 +20,7 @@
     <%= f.input :school %>
     <%= f.input :major %>
     <%= f.input :identity, collection: ["在校学生", "教师"], as: :radio_buttons, multiple: true %>
+    <%= f.input :subject_list, collection: Subject.all.map(&:name), input_html: {class: 'subjects', multiple: true} %>
     <%= f.input :fee, collection: ["面议","10元/小时", "20元/小时","30-50元/小时","50-100元/小时","100-200元/小时","200-300元/小时"] %>
     <%= f.input :time %>
     <%= f.input :experience, input_html: {rows: 6, class: "span5"} %>
