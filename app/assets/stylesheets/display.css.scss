@@ -1,0 +1,17 @@
+.thumbnail{
+  background-color: rgb(239, 234, 245);
+  border: 0px;
+  bordor-radium: 10px;
+}
+.thumbnail h4{
+border-bottom: 1px solid #DDDDDD;
+color: #999999;
+}
+#left{
+  float: left;
+}
+#right{
+  position: relative;
+  left: 500px;
+  top: -100px;
+}

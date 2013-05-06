@@ -7,7 +7,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      redirect_to new_tutor_info_path, notice: "Successfully Create user"
+      flash[:notice] = "Successfully Create user"
+      if @user.role == "tutor"
+        redirect_to new_tutor_info_path
+      else 
+        redirect_to new_student_info_path
+      end
     else
       render :new
     end

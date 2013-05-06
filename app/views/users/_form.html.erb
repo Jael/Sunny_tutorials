@@ -1,20 +1,14 @@
-<%= form_for @user do |f| %>
-  <% if @user.errors.any?  %>
-    <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-    </ul>
-  <% end %>
-  <%= f.label :name  %>
-  <%= f.text_field :name %><br />
-  <%= f.label :email %>
-  <%= f.email_field :email %>
-  <%= f.label :role %>
-  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
-  <%= f.label :password %>
-  <%= f.password_field :password %><br />
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %><br />
-  <%= f.submit %>
+<%= simple_form_for @user, html: {class: "form-horizontal"} do |f| %>
+  <fieldset>
+    <legend>Sign up</legend>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :role, collection: User::ROLES %>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+  <div class="form-actions">
+    <%= f.button :submit, class: "btn btn-info"%>
+    <%= link_to "我有帐号，去登录", log_in_path %>
+  </div>
+  </fieldset>
 <% end %>

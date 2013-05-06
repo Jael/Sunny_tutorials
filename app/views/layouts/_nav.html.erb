@@ -3,7 +3,36 @@
   <div class="container">
     <ul class="nav">
        <li><%= link_to "首页", home_path%></li>
+       <li><%= link_to "教员库", "#" %></li>
+       <li><%= link_to "学员库", "#" %></li>
+       <% if current_user.nil? %>
+         <li><%= link_to "做家教", sign_up_path %></li>
+       <% else %>
+         <li><%= link_to "做家教",  new_tutor_info_path%></li>
+       <% end %>
+
+       <li><%= link_to "请家教", new_student_info_path%></li>
+      <li><a href="javascript:void(0)" onClick="addCookie()" >收藏本站</a></li>
     </ul>
+    <% if current_user.nil? %>
+      <ul class="nav pull-right">
+        <li class="divider-vertical"><%= link_to "log in", log_in_path %></li>
+      </ul>
+    <% else %>
+      <ul>
+        <div class="btn-group pull-right">
+        <a class="btn dropdown-@usertoggle" data-toggle="dropdown" href="#">
+          <%= current_user.name %>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to "My profile", current_user %></li>
+          <li class="divider"></li>
+          <li><%= link_to 'logout', log_out_path, method: :delete, confirm: "Are you sure" %></li>
+        </ul>
+        </div>
+      </ul>
+    <% end %>
   </div>  
 </div>
   

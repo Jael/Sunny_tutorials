@@ -1,1 +1,27 @@
-kfkjkjkl
+<ul id="left" class="thumbnails">
+  <li class="span5">
+  <div class="thumbnail">
+  <h4>最新教员</h4>
+  <ul>
+    <% @tutor_infos.each do |t| %>
+      <li><%= link_to t.username + t.school, t%></li>
+    <% end %>
+  </ul>
+  <div class="text-right"><%= link_to "更多", "#" %></div>
+  </div>
+  </li>
+</ul>
+<ul id="right" class="thumbnails">
+  <li class="span5">
+  <div class="thumbnail">
+  <h4>最新学员</h4>
+  <ul>
+    <% @student_infos.each do |s| %>
+      <li><%= link_to s.grade + " " + s.area , t%></li>
+    <% end %>
+  </ul>
+  <div class="text-right"><%= link_to "更多", "#" %></div>
+  </div>
+  </li>
+</ul>
+<hr />
