@@ -9,10 +9,8 @@ class SessionsController < ApplicationController
       flash[:alert] = "用户名或密码错误"
     end
   end
-
   def destroy
     session[:user_id] = nil
     redirect_to :guangzhou, notice: "退出成功"
   end
-
 end
