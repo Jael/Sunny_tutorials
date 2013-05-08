@@ -1,5 +1,9 @@
 class StudentInfosController < ApplicationController
   load_and_authorize_resource
+
+  def index
+    @student_infos = StudentInfo.all
+  end
   
   def new
     @student_info = StudentInfo.new

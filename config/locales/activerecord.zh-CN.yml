@@ -33,6 +33,7 @@ ch:
         area: 区域
         address: 详细地址
         grade: 年级
+        subject_list: 科目
         fee: 收费标准
         time: 上课时间
         demand: 对教师的要求 

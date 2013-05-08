@@ -1,0 +1,26 @@
+<table class="table table-hover">
+  <caption>教员库</caption>
+    <tr>
+      <th>教员编号</th>
+      <th>目前身份</th>
+      <th>学校</th>
+      <th>专业</th>
+      <th>区域</th>
+      <th>经验</th>
+      <th>详情</th>
+      <th></th>
+    </tr>
+  <% @tutor_infos.each do |t| %>
+    <tbody>
+    <tr>
+      <td><%= t.id %></td>
+      <td><%= t.identity %></td>
+      <td><%= t.school %></td>
+      <td><%= t.major %></td>
+      <td><%= t.area %></td>
+      <td class="span3"><%= truncate(strip_tags(t.experience), length:30) %></td>
+      <td><%= link_to "查看", t %></td>
+    </tr>
+    </tbody>
+  <% end %>
+</table>

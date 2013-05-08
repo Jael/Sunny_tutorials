@@ -1,5 +1,9 @@
 class TutorInfosController < ApplicationController
   load_and_authorize_resource
+
+  def index
+    @tutor_infos = TutorInfo.all
+  end
   
   def new
     unless current_user.tutor_info.nil?

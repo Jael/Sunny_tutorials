@@ -14,7 +14,7 @@
       </li>
     <% end %>
   </ul>
-  <div class="text-right"><%= link_to "更多", "#" %></div>
+  <div class="text-right"><%= link_to "更多", tutor_infos_path %></div>
   </div>
   </li>
 </ul>
@@ -28,13 +28,14 @@
         <a href="<%= student_info_path(s) %>">
           <div class="c_a"><%= s.grade%></div>
           <div class="c_a"><%= s.area %></div>
+          <div class="c_a"><%= s.subject_list%></div>
           <div class="c_b"><%= truncate(strip_tags(s.demand), length:15) %></div>
           <div class="c_a"><%= s.created_at.strftime("%m-%d")%></div>
         </a>
       </li>
     <% end %>
   </ul>
-  <div class="text-right"><%= link_to "更多", "#" %></div>
+  <div class="text-right"><%= link_to "更多", student_infos_path %></div>
   </div>
   </li>
 </ul>

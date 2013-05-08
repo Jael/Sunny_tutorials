@@ -1,0 +1,27 @@
+<table class="table table-hover">
+  <caption>学员库</caption>  
+  <tr>
+    <th>订单编号</th>
+    <th>性别</th>
+    <th>年级</th>
+    <th>求教科目</th>
+    <th>区域位置</th>
+    <th>课时费用</th>
+    <th>要求</th>
+    <th>详情</th>
+  </tr>
+    <% @student_infos.each do |s| %>
+  <tbody>
+    <tr>
+      <td><%= s.id %></td>
+      <td><%= s.gender %></td>
+      <td><%= s.grade %></td>
+      <td><%= s.subject_list %></td>
+      <td><%= s.area %> : <%= s.address %></td>
+      <td><%= s.fee %></td>
+      <td class="span3"><%= truncate(strip_tags(s.demand), length: 20)%></td>
+      <td><%= link_to "查看", s %></td>
+    </tr>
+  </tbody>
+    <% end %>
+</table>
