@@ -1,14 +1,12 @@
 <%= simple_form_for @user, html: {class: "form-horizontal"} do |f| %>
-  <fieldset>
-    <legend>Sign up</legend>
+    <legend>注册</legend>
   <%= f.input :name %>
   <%= f.input :email %>
   <%= f.input :role, collection: User::ROLES %>
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
   <div class="form-actions">
-    <%= f.button :submit, class: "btn btn-info"%>
+    <%= f.button :submit, "注册", class: "btn btn-info"%>
     <%= link_to "我有帐号，去登录", log_in_path %>
   </div>
-  </fieldset>
 <% end %>

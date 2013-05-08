@@ -1,0 +1,6 @@
+ch:
+  simple_form:
+    placeholders:
+      tutor_info:
+        username: 请填写真实姓名
+        area: 所在城区

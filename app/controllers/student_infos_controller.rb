@@ -1,8 +1,24 @@
 class StudentInfosController < ApplicationController
-  before_filter :authenticate_user, except: [:index, :show]
-  before_filter :student_user, except: [:index, :show]
+  load_and_authorize_resource
   
   def new
-    @student_info = current_user.student_infos.new
+    @student_info = StudentInfo.new
+  end
+
+  def create
+    @student_info = StudentInfo.new(params[:student_info].merge!(user_id: current_user.id))
+    if @student_info.save
+      redirect_to @student_info, notice: "创建成功"
+    else
+      render :new
+    end
+  end
+
+  def update
+    if @student_info.update_attributes(params[:student_info])
+      redirect_to @student_info, notice: "修改成功"
+    else
+      render :edit
+    end
   end
 end

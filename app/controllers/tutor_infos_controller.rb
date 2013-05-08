@@ -1,6 +1,5 @@
 class TutorInfosController < ApplicationController
-  before_filter :authenticate_user, except: [:show, :index]
-  before_filter :tutor_user, except: [:show, :index]
+  load_and_authorize_resource
   
   def new
     unless current_user.tutor_info.nil?
@@ -11,10 +10,9 @@ class TutorInfosController < ApplicationController
 
   def create
     if current_user.tutor_info.nil?
-      @tutor_info = TutorInfo.new(params[:tutor_info])
-      @tutor_info.user_id = current_user.id
+      @tutor_info = TutorInfo.new(params[:tutor_info].merge!(user_id: current_user.id))
       if @tutor_info.save
-        redirect_to @tutor_info, notice: "Successfully"
+        redirect_to @tutor_info, notice: "新建成功"
       else
         render :new
       end
@@ -23,7 +21,16 @@ class TutorInfosController < ApplicationController
     end
   end
 
-  def show
-    @tutor_info = TutorInfo.find(params[:id])
+  def update
+    if @tutor_info.update_attributes(params[:tutor_info])
+      redirect_to @tutor_info, notice: "修改成功"
+    else
+      render :edit
+    end
+  end
+  
+  def destroy
+    @tutor_info.destroy
+    redirect_to :guangzhou, notice: "删除成功"
   end
 end

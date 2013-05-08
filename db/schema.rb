@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130506051905) do
+ActiveRecord::Schema.define(:version => 20130507133223) do
 
   create_table "student_infos", :force => true do |t|
     t.integer  "user_id"
@@ -19,14 +19,15 @@ ActiveRecord::Schema.define(:version => 20130506051905) do
     t.string   "username"
     t.string   "phone"
     t.string   "grade"
+    t.string   "subject"
     t.string   "time"
     t.string   "area"
     t.string   "address"
     t.string   "fee"
     t.text     "demand"
-    t.boolean  "status"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.boolean  "status",     :default => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   add_index "student_infos", ["user_id"], :name => "index_student_infos_on_user_id"
@@ -65,14 +66,14 @@ ActiveRecord::Schema.define(:version => 20130506051905) do
     t.string   "identity"
     t.string   "area"
     t.string   "address"
-    t.integer  "phone"
-    t.integer  "qq"
+    t.string   "phone"
+    t.string   "qq"
     t.string   "fee"
     t.string   "time"
     t.text     "experience"
-    t.boolean  "period"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.boolean  "status",        :default => false
   end
 
   create_table "users", :force => true do |t|

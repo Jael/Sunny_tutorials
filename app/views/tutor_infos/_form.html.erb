@@ -1,22 +1,25 @@
 <%= simple_form_for @tutor_info, html: {class: 'form-horizontal'} do |f| %>
-  <h1>基本信息</h1>
-    <%= f.input :username %>
+  <legend>基本信息</legend>
+    <%= f.input :username  %>
     <%= f.input :gender, collection: ["男","女"] , as: :radio_buttons %>
     <%= f.input :date_of_birth, as: :date, start_year: Date.today.year - 60,
                       end_year: Date.today.year - 12, discard_day: true, order: [:year, :month] %>
-  <h1>联系方式</h1>
-    <%= f.input :area, collection: ["荔湾", "越秀", "天河","海珠","白云" "黄埔", "番禺", "花都", "增城", "从化", "其它"] %>
+    <hr />
+  <legend>联系方式</legend>
+    <%= f.input :area, collection: ["荔湾", "越秀", "天河","海珠","白云", "黄埔", "番禺", "花都", "增城", "从化", "其它"] %>
     <%= f.input :address %>
     <%= f.input :phone %>
-    <%= f.input :qq %>
- <h1>详细资料</h1>
+    <%= f.input :qq %><hr />
+ <legend>详细资料</legend>
     <%= f.input :school %>
     <%= f.input :major %>
     <%= f.input :identity, collection: ["在校学生", "教师"], as: :radio_buttons, multiple: true %>
-    <%= f.input :subject_list, collection: Subject.all.map(&:name), input_html: {class: 'subjects', multiple: true} %>
     <%= f.input :fee, collection: ["面议","10元/小时", "20元/小时","30-50元/小时","50-100元/小时","100-200元/小时","200-300元/小时"] %>
+    <%= f.input :subject_list, collection: Subject.all.map(&:name), input_html: {class: 'subjects', multiple: true}%>
     <%= f.input :time %>
     <%= f.input :experience, input_html: {rows: 6, class: "span5"} %>
-    <%= f.input :period %>
-    <%= f.submit %>
+    <%= f.input :status%>
+    <div class="span2 offset6">
+      <%= f.button :submit, class: 'btn btn-primary'%>
+    </div>
 <% end %>

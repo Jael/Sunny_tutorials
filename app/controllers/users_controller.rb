@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if @user.save
       session[:user_id] = @user.id
-      flash[:notice] = "Successfully Create user"
+      flash[:notice] = "注册成功"
       if @user.role == "tutor"
         redirect_to new_tutor_info_path
       else 
@@ -21,6 +21,4 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
   end
-  
-
 end

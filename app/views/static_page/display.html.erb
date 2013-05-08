@@ -4,7 +4,14 @@
   <h4>最新教员</h4>
   <ul>
     <% @tutor_infos.each do |t| %>
-      <li><%= link_to t.username + t.school, t%></li>
+      <li>
+        <a href="<%= tutor_info_path(t) %>">
+        <div class="c_a"><%= t.username %></div>
+        <div class="c_c"><%= t.school%></div>
+        <div class="c_c"><%= t.major%></div>
+        <div class="c_a"><%= t.created_at.strftime("%m-%d")%></div>
+        </a>
+      </li>
     <% end %>
   </ul>
   <div class="text-right"><%= link_to "更多", "#" %></div>
@@ -17,7 +24,14 @@
   <h4>最新学员</h4>
   <ul>
     <% @student_infos.each do |s| %>
-      <li><%= link_to s.grade + " " + s.area , t%></li>
+      <li>
+        <a href="<%= student_info_path(s) %>">
+          <div class="c_a"><%= s.grade%></div>
+          <div class="c_a"><%= s.area %></div>
+          <div class="c_b"><%= truncate(strip_tags(s.demand), length:15) %></div>
+          <div class="c_a"><%= s.created_at.strftime("%m-%d")%></div>
+        </a>
+      </li>
     <% end %>
   </ul>
   <div class="text-right"><%= link_to "更多", "#" %></div>

@@ -1,0 +1,40 @@
+<%= link_to "修改", edit_student_info_path(@student_info), class: "pull-right" if can? :update, @student_info %>
+<table class="table table-bordered">
+  <tr>
+    <td>联系人</td>    
+    <td><%= @student_info.username %></td>
+  </tr>
+  <tr>
+    <td>性别</td>
+    <td><%= @student_info.gender %></td>
+  </tr>
+  <tr>
+    <td>联系电话</td>
+    <td><%= @student_info.phone%></td>
+  </tr>
+  <tr>
+    <td>区域</td>
+    <td><%= @student_info.area%></td>
+  </tr>
+  <tr>
+    <td>详细地址</td>
+    <td><%= @student_info.address%></td>
+  </tr>
+  <tr>
+    <td>年级</td>
+    <td><%= @student_info.grade%></td>
+  </tr>
+  <tr>
+    <td>收费标准</td>
+    <td><%= @student_info.fee%></td>
+  </tr>
+  <tr>
+    <td>上课时间</td>
+    <td><%= @student_info.time%></td>
+  </tr>
+  <tr>
+    <td>学员需求</td>
+    <td><%= @student_info.demand%></td>
+  </tr>
+  
+</table>

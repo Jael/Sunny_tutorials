@@ -3,6 +3,7 @@
   <div class="container">
     <ul class="nav">
        <li><%= link_to "首页", home_path%></li>
+       <li><%= link_to "广州站", guangzhou_path%></li>
        <li><%= link_to "教员库", "#" %></li>
        <li><%= link_to "学员库", "#" %></li>
        <% if current_user.nil? %>
@@ -16,7 +17,7 @@
     </ul>
     <% if current_user.nil? %>
       <ul class="nav pull-right">
-        <li class="divider-vertical"><%= link_to "log in", log_in_path %></li>
+        <li class="divider-vertical"><%= link_to "登录", log_in_path %></li>
       </ul>
     <% else %>
       <ul>
