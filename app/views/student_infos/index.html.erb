@@ -8,6 +8,7 @@
     <th>区域位置</th>
     <th>课时费用</th>
     <th>要求</th>
+    <th>状态</th>
     <th>详情</th>
   </tr>
     <% @student_infos.each do |s| %>
@@ -20,6 +21,13 @@
       <td><%= s.area %> : <%= s.address %></td>
       <td><%= s.fee %></td>
       <td class="span3"><%= truncate(strip_tags(s.demand), length: 20)%></td>
+      <td>
+        <% if s.status == true %>
+          有效
+        <% else %>
+          无效
+        <% end %>
+      </td>
       <td><%= link_to "查看", s %></td>
     </tr>
   </tbody>

@@ -7,6 +7,7 @@
       <th>专业</th>
       <th>区域</th>
       <th>经验</th>
+      <th>状态</th>
       <th>详情</th>
       <th></th>
     </tr>
@@ -19,6 +20,13 @@
       <td><%= t.major %></td>
       <td><%= t.area %></td>
       <td class="span3"><%= truncate(strip_tags(t.experience), length:30) %></td>
+      <td>
+        <% if t.status == true %>
+          有效
+        <% else %>
+          无效
+        <% end %>
+      </td>
       <td><%= link_to "查看", t %></td>
     </tr>
     </tbody>
