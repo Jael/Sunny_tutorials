@@ -2,7 +2,8 @@ class TutorInfosController < ApplicationController
   load_and_authorize_resource
 
   def index
-    @tutor_infos = TutorInfo.all
+    @tutor_infos = params[:search_id] ? Search.find(params[:search_id]).find_tutor_infos : TutorInfo.all
+    @search = Search.new(search_type: "tutor")
   end
   
   def new

@@ -1,0 +1,8 @@
+<%= simple_form_for @search, html: {class: 'form-horizontal'} do |f| %>
+  <%= f.hidden_field :search_type %>
+  <%= f.input :uid, wrapper_html: {class: 'line'} %>
+  <%= f.input :area, ollection: ["荔湾", "越秀", "天河","海珠","白云", "黄埔", "番禺", "花都", "增城", "从化", "其它"], wrapper_html: {class: 'line'} %>
+  <%= f.input :subject, ollection: Subject.all.map(&:name), wrapper_html: {class: 'line'} %>
+  <%= f.input :gender, collection: ["男", "女"], wrapper_html: {class: 'line'} %>
+  <%= f.submit "搜索" %>
+<% end %>

@@ -4,6 +4,11 @@ ch:
       tutor_info: 教员信息
       student_info: 学员信息
     attributes:
+      search:
+        uid: 编号
+        area: 区域
+        subject: 科目
+        gender: 性别
       user:
         name: 昵称
         email: 邮箱地址
