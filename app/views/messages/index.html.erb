@@ -1,0 +1,12 @@
+<ul id="chat">
+  <%= render @messages %>
+</ul>
+
+<% if can? :create, @message %>
+<%= simple_form_for @message, remote: true do |f| %>
+  <%= f.input :content, require: true, input_html: {class: 'span7', rows: 3}%>
+  <%= f.submit "发送" %>
+<% end %>
+<% else %>
+  <%= button_to "我要讨论", log_in_path, method: :get %>
+<% end %>

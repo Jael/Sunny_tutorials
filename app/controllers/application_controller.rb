@@ -2,6 +2,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   helper_method :current_user
 
+
   rescue_from CanCan::AccessDenied do |exception|
     if current_user.nil?
       redirect_to :sign_up, notice: "请先注册"

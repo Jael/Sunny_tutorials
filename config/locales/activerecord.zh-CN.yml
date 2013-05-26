@@ -3,6 +3,7 @@ ch:
     models:
       tutor_info: 教员信息
       student_info: 学员信息
+      message: 信息
     attributes:
       search:
         uid: 编号
@@ -42,5 +43,7 @@ ch:
         fee: 收费标准
         time: 上课时间
         demand: 对教师的要求 
+      message:
+        content: 讨论
    
 

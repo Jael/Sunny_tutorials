@@ -3,6 +3,7 @@ SunnyTutorial::Application.routes.draw do
   resources :student_infos
   resources :tutor_infos
   resources :searches
+  resources :messages
   get 'login' => "sessions#new", as: :log_in
   match 'logout' => "sessions#destroy", as: :log_out
   get 'signup' => "users#create", as: :sign_up

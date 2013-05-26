@@ -20,5 +20,9 @@ class Ability
         student_info.try(:user) == user 
       end
     end
+
+    if user.id
+      can :create, Message
+    end
   end
 end

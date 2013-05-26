@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_secure_password
   has_one :tutor_info
   has_many :student_infos
+  has_many :messages
 
   ROLES = %w[student tutor]
 end
