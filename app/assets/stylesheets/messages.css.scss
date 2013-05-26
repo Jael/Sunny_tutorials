@@ -3,9 +3,10 @@
   padding: 0;
   width: 670px;
   height: 450px;
-  border: solid 1px #777;
   margin: 5px 0;
   overflow: auto;
+  border-radius: 10px;
+  background-color: rgb(241, 237, 237);
 }
 #chat li{
   margin: 2px 5px;

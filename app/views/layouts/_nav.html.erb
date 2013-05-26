@@ -2,14 +2,14 @@
 <div class="navbar-inner">
   <div class="container">
     <ul class="nav">
-       <li><%= link_to "首页", home_path%></li>
-       <li><%= link_to "广州站", guangzhou_path%></li>
-       <li><%= link_to "教员库", tutor_infos_path %></li>
-       <li><%= link_to "学员库", student_infos_path %></li>
-       <li><%= link_to "做家教",  new_tutor_info_path%></li>
-       <li><%= link_to "请家教", new_student_info_path%></li>
-       <li><%= link_to "讨论区", messages_path %></li>
-       <li><a href="javascript:void(0)" onClick="addCookie()" >收藏本站</a></li>
+       <li class='divider-vertical'><%= link_to "首页", home_path%></li>
+       <li class='divider-vertical'><%= link_to "广州站", guangzhou_path%></li>
+       <li class='divider-vertical'><%= link_to "教员库", tutor_infos_path %></li>
+       <li class='divider-vertical'><%= link_to "学员库", student_infos_path %></li>
+       <li class='divider-vertical'><%= link_to "做家教",  new_tutor_info_path%></li>
+       <li class='divider-vertical'><%= link_to "请家教", new_student_info_path%></li>
+       <li class='divider-vertical'><%= link_to "讨论区", messages_path %></li>
+       <li class='divider-vertical'><a href="javascript:void(0)" onClick="addCookie()" >收藏本站</a></li>
     </ul>
     <ul class="nav pull-right">
     <% if current_user.nil? %>
